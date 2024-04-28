@@ -22,6 +22,14 @@ body {
   box-shadow: 2px 4px 16px rgba(0,0,0,.2);
 }
 
+.container{
+  display: flex;
+  gap: 20px;
+  margin-top: 15px;
+  margin-left: 15px;
+
+}
+
 .icon {
   color: royalblue;
   font-size: 26px;
@@ -33,6 +41,31 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex: 1 0.01 auto;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  margin-right: 15px;
+  /* gap: 15px; */
+}
+
+.row-1{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.buttons{
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.header{
+  font-weight: bold;
+  font-size: 1.25em;
 }
 
 .close-button {
