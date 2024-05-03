@@ -3,12 +3,28 @@
   padding: 0;
 }
 
+html{
+  height: 100%;
+}
+
+body{
+  min-height: 100%;
+}
+
 .container {
+  height: 100%;
   text-align: center;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-rows: 100px 1fr 50px;
+  grid-template-areas:
+    "header"
+    "content"
+    "footer";
 }
 
 .container div {
-  padding: 15px;
+  /* padding: 15px; */
   font-size: 32px;
   font-family: Helvetica;
   font-weight: bold;
@@ -17,6 +33,32 @@
 
 .header {
   background-color: #393f4d;
+  grid-area: header;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.logo{
+  display: grid;
+  align-items: center;
+  justify-content: start;
+  padding-left: 30px;
+}
+
+.menu {
+  display: grid;
+  align-items: center;
+}
+
+.menu ul{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 .menu ul,
@@ -24,8 +66,26 @@
   font-size: 16px;
 }
 
+.content{
+  grid-area: content;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+}
+
 .sidebar {
   background-color: #C50208;
+  display: grid;
+  grid-template-rows: repeat(4,1fr);
+  row-gap: 40px;
+  padding: 15px;
+  margin-top: 3px;
+  margin-right: 3px;
+  margin-bottom: 3px;
+}
+
+.sidebar div{
+  display: grid;
+  align-items: center;
 }
 
 .sidebar .photo {
@@ -44,8 +104,15 @@
   font-weight: normal;
 }
 
+.main-content{
+  margin-top: 3px;
+}
+
 .nav {
   background-color: #C50208;
+  padding: 0;
+  padding: 15px;
+  margin-bottom: 3px;
 }
 
 .nav ul li {
@@ -53,8 +120,18 @@
   text-transform: uppercase;
 }
 
+.nav ul{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
 .article {
   background-color: #bccbde;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 15px;
+  padding: 15px;
+  margin-bottom: 3px;
 }
 
 .article p {
@@ -68,6 +145,7 @@
   background-color: #FFFFFF;
   color: black;
   text-align: center;
+  height: 200px;
 }
 
 .card p {
@@ -83,6 +161,10 @@
 
 .footer {
   background-color: #393f4d;
+  grid-area: footer;
+  display: grid;
+  justify-content: center;
+  align-items: center;
 }
 
 .footer p {
